@@ -15,4 +15,10 @@ func main() {
 	for name, age := range ages {
 		fmt.Printf("%s\t%d\n", name, age)
 	}
+
+	// key lookups on map never produce errors
+	fmt.Println(ages["carol"]) // == 0 DNE
+	if _, ok := ages["carol"]; !ok {
+		fmt.Printf("Carol DNE!!!\nok == %v", ok)
+	}
 }
